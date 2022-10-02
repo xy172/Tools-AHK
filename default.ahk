@@ -8,42 +8,34 @@ Menu, Tray, Tip, XY's AHK scripts.
 
 CapsLockMenu()
 {
+Menu, CapsLockMenu, Add, CapsLock ON, CapsLockOn
+Menu, CapsLockMenu, Add, CapsLock off, CapsLockOff
 Menu, CapsLockMenu, Add
-Menu, CapsLockMenu, Delete
-Menu, CapsLockMenu, Add, CAPSLock Menu, ToggleCapsLock
+Menu, CapsLockMenu, Add, Paste as Plain Text, PastePlain
 Menu, CapsLockMenu, Add
-Menu, CapsLockMenu, Add, CapsLock O&N, CapsLockOn
-Menu, CapsLockMenu, Add, CapsLock &off, CapsLockOff
-Menu, CapsLockMenu, Add
-Menu, CapsLockMenu, Add, Paste as &Plain Text, PastePlain
-Menu, CapsLockMenu, Add
+Menu, ConvertCaseMenu, Add, Title Case, Title
+Menu, ConvertCaseMenu, Add, Capital Case, Capital
+Menu, ConvertCaseMenu, Add, Sentence case, Sentence
 Menu, ConvertCaseMenu, Add
-Menu, ConvertCaseMenu, Delete
-Menu, ConvertCaseMenu, Add, &Title Case, Title
-Menu, ConvertCaseMenu, Add, Ca&pital Case, Capital
-Menu, ConvertCaseMenu, Add, &Sentence case, Sentence
+Menu, ConvertCaseMenu, Add, UPPERCASE, Upper
+Menu, ConvertCaseMenu, Add, lowercase, Lower
+Menu, ConvertCaseMenu, Add, camelCase, camel
+Menu, ConvertCaseMenu, Add, PascalCase, Pascal
 Menu, ConvertCaseMenu, Add
-Menu, ConvertCaseMenu, Add, &UPPERCASE, Upper
-Menu, ConvertCaseMenu, Add, lo&wercase, Lower
-Menu, ConvertCaseMenu, Add, &camelCase, camel
-Menu, ConvertCaseMenu, Add, &PascalCase, Pascal
+Menu, ConvertCaseMenu, Add, Dot.Case, Dot
+Menu, ConvertCaseMenu, Add, Snake_Case, Snake
+Menu, ConvertCaseMenu, Add, Kebab-Case, Kebab
 Menu, ConvertCaseMenu, Add
-Menu, ConvertCaseMenu, Add, &Dot.Case, Dot
-Menu, ConvertCaseMenu, Add, S&nake_Case, Snake
-Menu, ConvertCaseMenu, Add, &Kebab-Case, Kebab
-Menu, ConvertCaseMenu, Add
-Menu, ConvertCaseMenu, Add, iN&VERT cASE, Invert
-Menu, ConvertCaseMenu, Add, &RaNdoM caSe, Random
-Menu, ConvertCaseMenu, Add, &aLtErNaTiNg cAsE, Alternating
-Menu, CapsLockMenu, Add, Con&vert Case, :ConvertCaseMenu
+Menu, ConvertCaseMenu, Add, iNVERT cASE, Invert
+Menu, ConvertCaseMenu, Add, RaNdoM caSe, Random
+Menu, ConvertCaseMenu, Add, aLtErNaTiNg cAsE, Alternating
+Menu, CapsLockMenu, Add, Convert Case, :ConvertCaseMenu
 Menu, CapsLockMenu, Add
-Menu, CapsLockMenu, Add, &Emoji Keyboard, OpenEmojiKeyboard
-Menu, InsertLineMenu, Add
-Menu, InsertLineMenu, Delete
-Menu, InsertLineMenu, Add, &Light, LightHorizontalBoxDrawing
-Menu, InsertLineMenu, Add, &Double, DoubleHorizontalBoxDrawing
-Menu, CapsLockMenu, Add, Insert &Line, :InsertLineMenu
-Menu, CapsLockMenu, Default, CapsLock Menu
+Menu, CapsLockMenu, Add, Emoji Keyboard, OpenEmojiKeyboard
+Menu, CapsLockMenu, Add
+Menu, InsertLineMenu, Add, Light, LightHorizontalBoxDrawing
+Menu, InsertLineMenu, Add, Double, DoubleHorizontalBoxDrawing
+Menu, CapsLockMenu, Add, Insert Line, :InsertLineMenu
 Menu, CapsLockMenu, Show
 }
 
@@ -338,11 +330,8 @@ return
 
 NumLockMenu()
 {
-Menu, NumLockMenu, Add
-Menu, NumLockMenu, Delete
-Menu, NumLockMenu, Add, NumLock O&N, NumLockOn
-Menu, NumLockMenu, Add, NumLock &off, NumLockOff
-Menu, NumLockMenu, Default, NumLock O&N
+Menu, NumLockMenu, Add, NumLock on, NumLockOn
+Menu, NumLockMenu, Add, NumLock off, NumLockOff
 Menu, NumLockMenu, Show
 }
 
