@@ -6,6 +6,16 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetBatchLines -1  ; Run the script at maximum speed.
 Menu, Tray, Tip, XY's AHK scripts.
 
+^#F5::
+{
+TrayTip AHK, Reloading., 3, 17
+Reload
+Sleep 1000 ; If successful, the reload will close this instance during the Sleep, so the line below will never be reached.
+MsgBox, 4,, The script could not be reloaded. Would you like to open it for editing?
+IfMsgBox, Yes, Edit
+return
+}
+
 CapsLockMenu()
 {
 Menu, CapsLockMenu, Add, CapsLock ON, CapsLockOn
@@ -380,3 +390,28 @@ $NumLock::
         }
     KeyWait NumLock
 return
+
+
+
+
+
+SC121:: ;change to ^PrintScreen when not on cherry keyboard
+if WinExist("Snipping Tool")
+{
+    WinActivate
+    WinWaitActive, Snipping Tool
+    Send, ^n
+}
+else 
+{
+    Run SnippingTool.exe
+    WinWaitActive, Snipping Tool
+    Send, ^n
+}
+return
+
+
+
+
+
+SC16D:: ;Cherry key
