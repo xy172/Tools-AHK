@@ -13,3 +13,5 @@ $CapsLock:: capsLockToggler()
 $NumLock:: numLocktoggler()
 
 ^PrintScreen:: printScrnToggler()
+
++^v:: sender(plainify(Clipboard), True)
