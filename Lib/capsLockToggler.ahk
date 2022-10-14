@@ -1,5 +1,7 @@
 CapsLockMenu()
 {
+Menu, CapsLockMenu, Add
+Menu, CapsLockMenu, Delete
 Menu, CapsLockMenu, Add, CapsLock ON, CapsLockOn
 Menu, CapsLockMenu, Add, CapsLock off, CapsLockOff
 Menu, CapsLockMenu, Add
