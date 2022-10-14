@@ -1,5 +1,7 @@
 NumLockMenu()
 {
+Menu, NumLockMenu, Add
+Menu, NumLockMenu, Delete
 Menu, NumLockMenu, Add, NumLock on, NumLockOn
 Menu, NumLockMenu, Add, NumLock off, NumLockOff
 Menu, NumLockMenu, Show
