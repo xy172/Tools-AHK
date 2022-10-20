@@ -9,15 +9,21 @@ Menu, Tray, Tip, XY's AHK scripts.
 ^#F5:: restarter()
 
 $CapsLock:: capsLockToggler()
-
 $NumLock:: numLocktoggler()
+$SC121:: calcuToggler() ;Calculator key
 
-SC121:: printScrnToggler() ;Calculator key
-
-SC16D:: macroMenu() ;Cherry Key
+$SC16D:: macroMenu()
 
 +^v:: plainify_sender(plainify(Clipboard), True)
+$XButton1:: ^c
+$XButton2:: ^v
 
-XButton1:: ^c
+$Media_Play_Pause:: Volume_Mute
+$Media_Prev:: Volume_Down
+$Media_Next:: Volume_Up
 
-XButton2:: ^v
+$Volume_Mute:: Media_Play_Pause
+$Volume_Down:: Media_Prev
+$Volume_Up:: Media_Next
+
++PrintScreen:: printScrnToggler()
