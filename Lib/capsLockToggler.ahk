@@ -1,36 +1,40 @@
 CapsLockMenu()
 {
-Menu, CapsLockMenu, Add
-Menu, CapsLockMenu, Delete
-Menu, CapsLockMenu, Add, CapsLock ON, CapsLockOn
-Menu, CapsLockMenu, Add, CapsLock off, CapsLockOff
-Menu, CapsLockMenu, Add
-Menu, CapsLockMenu, Add, Paste as Plain Text, PastePlain
-Menu, CapsLockMenu, Add
-Menu, ConvertCaseMenu, Add, Title Case, Title
-Menu, ConvertCaseMenu, Add, Capital Case, Capital
-Menu, ConvertCaseMenu, Add, Sentence case, Sentence
-Menu, ConvertCaseMenu, Add
-Menu, ConvertCaseMenu, Add, UPPERCASE, Upper
-Menu, ConvertCaseMenu, Add, lowercase, Lower
-Menu, ConvertCaseMenu, Add, camelCase, camel
-Menu, ConvertCaseMenu, Add, PascalCase, Pascal
-Menu, ConvertCaseMenu, Add
-Menu, ConvertCaseMenu, Add, Dot.Case, Dot
-Menu, ConvertCaseMenu, Add, Snake_Case, Snake
-Menu, ConvertCaseMenu, Add, Kebab-Case, Kebab
-Menu, ConvertCaseMenu, Add
-Menu, ConvertCaseMenu, Add, iNVERT cASE, Invert
-Menu, ConvertCaseMenu, Add, RaNdoM caSe, Random
-Menu, ConvertCaseMenu, Add, aLtErNaTiNg cAsE, Alternating
-Menu, CapsLockMenu, Add, Convert Case, :ConvertCaseMenu
-Menu, CapsLockMenu, Add
-Menu, CapsLockMenu, Add, Emoji Keyboard, OpenEmojiKeyboard
-Menu, CapsLockMenu, Add
-Menu, InsertLineMenu, Add, Light, LightHorizontalBoxDrawing
-Menu, InsertLineMenu, Add, Double, DoubleHorizontalBoxDrawing
-Menu, CapsLockMenu, Add, Insert Line, :InsertLineMenu
-Menu, CapsLockMenu, Show
+    Menu, CapsLockMenu, Add
+    Menu, CapsLockMenu, Delete
+    Menu, CapsLockMenu, Add, CapsLock ON, CapsLockMenu_CapsLockOn
+    Menu, CapsLockMenu, Add, CapsLock off, CapsLockMenu_CapsLockOff
+    Menu, CapsLockMenu, Add
+    Menu, CapsLockMenu, Add, Paste as Plain Text, CapsLockMenu_PastePlain
+    Menu, CapsLockMenu, Add
+    Menu, ConvertCaseMenu, Add
+    Menu, ConvertCaseMenu, Delete
+    Menu, ConvertCaseMenu, Add, Title Case, CapsLockMenu_Title
+    Menu, ConvertCaseMenu, Add, Capital Case, CapsLockMenu_Capital
+    Menu, ConvertCaseMenu, Add, Sentence case, CapsLockMenu_Sentence
+    Menu, ConvertCaseMenu, Add
+    Menu, ConvertCaseMenu, Add, UPPERCASE, CapsLockMenu_Upper
+    Menu, ConvertCaseMenu, Add, lowercase, CapsLockMenu_Lower
+    Menu, ConvertCaseMenu, Add, camelCase, CapsLockMenu_camel
+    Menu, ConvertCaseMenu, Add, PascalCase, CapsLockMenu_Pascal
+    Menu, ConvertCaseMenu, Add
+    Menu, ConvertCaseMenu, Add, Dot.Case, CapsLockMenu_Dot
+    Menu, ConvertCaseMenu, Add, Snake_Case, CapsLockMenu_Snake
+    Menu, ConvertCaseMenu, Add, Kebab-Case, CapsLockMenu_Kebab
+    Menu, ConvertCaseMenu, Add
+    Menu, ConvertCaseMenu, Add, iNVERT cASE, CapsLockMenu_Invert
+    Menu, ConvertCaseMenu, Add, RaNdoM caSe, CapsLockMenu_Random
+    Menu, ConvertCaseMenu, Add, aLtErNaTiNg cAsE, CapsLockMenu_Alternating
+    Menu, CapsLockMenu, Add, Convert Case, :ConvertCaseMenu
+    Menu, CapsLockMenu, Add
+    Menu, CapsLockMenu, Add, Emoji Keyboard, CapsLockMenu_OpenEmojiKeyboard
+    Menu, CapsLockMenu, Add
+    Menu, InsertLineMenu, Add
+    Menu, InsertLineMenu, Delete
+    Menu, InsertLineMenu, Add, Light, CapsLockMenu_LightHorizontalBoxDrawing
+    Menu, InsertLineMenu, Add, Double, CapsLockMenu_DoubleHorizontalBoxDrawing
+    Menu, CapsLockMenu, Add, Insert Line, :InsertLineMenu
+    Menu, CapsLockMenu, Show
 }
 
 CopyClipboard()
@@ -50,7 +54,7 @@ CopyClipboard()
     }
 }
 
-PastePlain()
+CapsLockMenu_PastePlain()
 {
     ClipSaved := ClipboardAll  ; save original clipboard contents
     Clipboard := Clipboard  ; remove formatting
@@ -64,10 +68,10 @@ PastePlain()
 ToggleCapsLock(){
     return, CapsLockey(, True)
 }
-CapsLockOn(){
+CapsLockMenu_CapsLockOn(){
     return, CapsLockey(True)
 }
-CapsLockOff(){
+CapsLockMenu_CapsLockOff(){
     return, CapsLockey()
 }
 
@@ -119,7 +123,7 @@ PasteClipboardCLM()
     ClipSaved := ""
 }
 
-Title()
+CapsLockMenu_Title()
 {
     ExcludeList := ["a", "about", "above", "after", "an", "and", "as", "at", "before", "but", "by", "for", "from", "nor", "of", "or", "so", "the", "to", "via", "with", "within", "without", "yet"]
     ExactExcludeList := ["AutoHotkey", "iPad", "iPhone", "iPod", "OneNote", "USA"]
@@ -134,7 +138,7 @@ Title()
     PasteClipboardCLM()
 }
 
-Capital()
+CapsLockMenu_Capital()
 {
     ExactExcludeList := ["AutoHotkey", "iPad", "iPhone", "iPod", "OneNote", "USA"]
     CopyClipboardCLM()
@@ -145,7 +149,7 @@ Capital()
     PasteClipboardCLM()
 }
 
-Sentence()
+CapsLockMenu_Sentence()
 {
     ExactExcludeList := ["AutoHotkey", "iPad", "iPhone", "iPod", "OneNote", "USA"]
     CopyClipboardCLM()
@@ -156,21 +160,21 @@ Sentence()
     PasteClipboardCLM()
 }
 
-Upper()
+CapsLockMenu_Upper()
 {
     CopyClipboardCLM()
     StringUpper, Clipboard, Clipboard
     PasteClipboardCLM()
 }
 
-Lower()
+CapsLockMenu_Lower()
 {
     CopyClipboardCLM()
     StringLower, Clipboard, Clipboard
     PasteClipboardCLM()
 }
 
-camel()
+CapsLockMenu_camel()
 {
     CopyClipboardCLM()
     StringUpper, Clipboard, Clipboard, T
@@ -182,7 +186,7 @@ camel()
     PasteClipboardCLM()
 }
 
-Pascal()
+CapsLockMenu_Pascal()
 {
     CopyClipboardCLM()
     StringUpper, Clipboard, Clipboard, T
@@ -190,7 +194,7 @@ Pascal()
     PasteClipboardCLM()
 }
 
-Dot()
+CapsLockMenu_Dot()
 {
     CopyClipboardCLM()
     if RegExMatch(Clipboard, "\-|\_|\.") != "0"
@@ -205,7 +209,7 @@ Dot()
     }
 }
 
-Snake()
+CapsLockMenu_Snake()
 {
     CopyClipboardCLM()
     if RegExMatch(Clipboard, "\-|\_|\.") != "0"
@@ -220,7 +224,7 @@ Snake()
     }
 }
 
-Kebab()
+CapsLockMenu_Kebab()
 {
     CopyClipboardCLM()
     if RegExMatch(Clipboard, "\-|\_|\.") != "0"
@@ -235,7 +239,7 @@ Kebab()
     } 
 }
 
-Invert()
+CapsLockMenu_Invert()
 {
     CopyClipboardCLM()
     Inv_Char_Out := ""
@@ -253,7 +257,7 @@ Invert()
     PasteClipboardCLM()
 }
 
-Random()
+CapsLockMenu_Random()
 {
     CopyClipboardCLM()
     RandomCase := ""
@@ -266,7 +270,7 @@ Random()
     PasteClipboardCLM()
 }
 
-Alternating()
+CapsLockMenu_Alternating()
 {
     CopyClipboardCLM()
     Inv_Char_Out := ""
@@ -282,20 +286,20 @@ Alternating()
     PasteClipboardCLM()
 }
 
-OpenEmojiKeyboard()
+CapsLockMenu_OpenEmojiKeyboard()
 {
     Send {LWin down}.
     Send {LWin up}
 }
 
-LightHorizontalBoxDrawing()
+CapsLockMenu_LightHorizontalBoxDrawing()
 {
     InputBox, UserInput, Input, , , 150, 105
     Loop %UserInput%
         Send {U+2500}
 }
 
-DoubleHorizontalBoxDrawing()
+CapsLockMenu_DoubleHorizontalBoxDrawing()
 {
     InputBox, UserInput, Input, , , 150, 105
     Loop %UserInput%
