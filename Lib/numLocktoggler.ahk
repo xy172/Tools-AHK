@@ -1,10 +1,10 @@
 NumLockMenu()
 {
-Menu, NumLockMenu, Add
-Menu, NumLockMenu, Delete
-Menu, NumLockMenu, Add, NumLock on, NumLockOn
-Menu, NumLockMenu, Add, NumLock off, NumLockOff
-Menu, NumLockMenu, Show
+    Menu, NumLockMenu, Add
+    Menu, NumLockMenu, Delete
+    Menu, NumLockMenu, Add, NumLock on, NumLockOn
+    Menu, NumLockMenu, Add, NumLock off, NumLockOff
+    Menu, NumLockMenu, Show
 }
 
 ; creating something that links the function to a specific state that can then be called by legacy commands
@@ -35,21 +35,14 @@ NumLockey(state := false, toggle := false)
     TrayTip NumLock Menu, % messages[(GetKeyState("NumLock", "T") == state) ? state : "failed"], 3, 17
 }
 
-numLocktoggler()
+numLockToggler()
 {
     KeyWait NumLock, T0.25
         if ErrorLevel
             NumLockMenu()
         else
         {
-            if WinExist("Calculator ahk_class CalcFrame") or WinExist("Calculator ahk_class ApplicationFrameWindow")
-		        if WinActive()
-			        WinMinimize
-		        else
-			        WinActivate
-	        else
-		        Run calc.exe
-	        return
+            Send ^+{Left}{Del}
         }
     KeyWait NumLock
 return
