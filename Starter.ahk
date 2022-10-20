@@ -10,6 +10,7 @@ Menu, Tray, Tip, XY's AHK scripts.
 
 $CapsLock:: capsLockToggler()
 $NumLock:: numLocktoggler()
+$ScrollLock:: scrollLockToggler()
 $SC121:: calcuToggler() ;Calculator key
 
 $SC16D:: macroMenu()
@@ -25,5 +26,3 @@ $Media_Next:: Volume_Up
 $Volume_Mute:: Media_Play_Pause
 $Volume_Down:: Media_Prev
 $Volume_Up:: Media_Next
-
-+PrintScreen:: printScrnToggler()
