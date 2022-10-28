@@ -6,7 +6,7 @@ SetWorkingDir %A_MyDocuments%\AutoHotkey\Lib\  ; Ensures a consistent starting d
 SetBatchLines -1  ; Run the script at maximum speed.
 Menu, Tray, Tip, XY's AHK scripts.
 
-global pasteType := "Default"
+global appType := ["Default","Period"]
 
 ^#F5:: restarter()
 
@@ -14,12 +14,14 @@ $CapsLock:: capsLockToggler()
 $NumLock:: numLocktoggler()
 $ScrollLock:: scrollLockToggler()
 $SC121:: calcuToggler() ;Calculator key
-AppsKey:: PasteMenu()
+AppsKey:: appMenu()
 
 $SC16D:: macroMenu()
 
 $XButton1:: ^c
-$XButton2:: PasteMenu_paste()
+$XButton2:: appMenu_paste()
+
+$NumpadDot:: appMenu_numpadDot()
 
 $Media_Play_Pause:: Volume_Mute
 $Media_Prev:: Volume_Down
