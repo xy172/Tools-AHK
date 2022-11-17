@@ -24,10 +24,10 @@ plainify_sender(data, asraw:= False)
 }
 plainify_regTrim(data)
 {
-    While RegExMatch(body, "^\s(.*)"){
+    While RegExMatch(data, "^\s(.*)"){
         data := RegExReplace(data, "^\s(.*)", "$1")
     }
-    While RegExMatch(body, "(.*)\s$"){
+    While RegExMatch(data, "(.*)\s$"){
         data := RegExReplace(data, "(.*)\s$", "$1")
     }
     return data
@@ -35,5 +35,12 @@ plainify_regTrim(data)
 plainify_regTrimNonAlphaNumeral(data)
 {
     data := RegExReplace(data, "\W", " ")
+    return data
+}
+plainify_trimLeading0(data)
+{
+    While RegExMatch(data, "^0(.*)"){
+        data := RegExReplace(data, "^0(.*)", "$1")
+    }
     return data
 }
