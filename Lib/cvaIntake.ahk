@@ -1,3 +1,4 @@
+#Include, plainify.ahk
 cvaIntake()
 {
     outlook := ComObjActive("Outlook.Application").GetNameSpace("MAPI")
