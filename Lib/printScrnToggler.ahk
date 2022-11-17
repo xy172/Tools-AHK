@@ -6,7 +6,7 @@ printScrnToggler() ;change to ^PrintScreen when not on cherry keyboard
         WinWaitActive, Snipping Tool
         Send, ^n
     }
-    else 
+    else
     {
         Run SnippingTool.exe
         WinWaitActive, Snipping Tool
