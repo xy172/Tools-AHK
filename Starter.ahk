@@ -1,12 +1,16 @@
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
+;#Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_MyDocuments%\AutoHotkey\Lib\  ; Ensures a consistent starting directory.
 #SingleInstance Force  ; Replaces the old instance automatically.
 SetBatchLines -1  ; Run the script at maximum speed.
-Menu, Tray, Tip, XY's AHK scripts.
+Menu, Tray, Tip, XY's AHK scripts. ; Changes tray menu tooltip.
 
-global appType := ["Default","Period"]
+global appVar := ["Default","Period"] ; Global Variable for keeping track of current menu selections.
+global winid := ""
+#Include, %A_MyDocuments%\AutoHotkey\Lib\autoExecute.ahk
+
+;Start of hotkeys
 
 ^#F5:: restarter()
 
@@ -16,7 +20,7 @@ $ScrollLock:: scrollLockToggler()
 $SC121:: calcuToggler() ;Calculator key
 AppsKey:: appMenu()
 
-$SC16D:: macroMenu()
+$SC16D:: macroMenu() ;Media Player key (bound to cherry key on work KB)
 
 $XButton1:: ^c
 $XButton2:: appMenu_paste()
