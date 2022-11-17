@@ -22,6 +22,13 @@ appMenu()
         
     Menu, appMenu, Add, Paste Menu, :pasteMenu
     Menu, appMenu, Add, Numpad Period, :numpadMenu
+    
+        Menu, miniMenu, Add, Macro Menu, macroMenu
+        Menu, miniMenu, Add, CapsLock Menu, CapsLockMenu
+        Menu, miniMenu, Add, Number Lock Menu, NumLockMenu
+        Menu, miniMenu, Add, Scroll Lock Menu, scrollLockMenu
+        
+    Menu, appMenu, Add, Other Menus, :miniMenu
     Menu, appMenu, Show
 }
 
