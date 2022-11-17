@@ -4,6 +4,7 @@ NumLockMenu()
     Menu, NumLockMenu, Delete
     Menu, NumLockMenu, Add, NumLock on, NumLockOn
     Menu, NumLockMenu, Add, NumLock off, NumLockOff
+    Menu, NumLockMenu, Add, Numpad Dot, :numpadMenu
     Menu, NumLockMenu, Show
 }
 
@@ -11,7 +12,7 @@ NumLockMenu()
 NumLockOn(){
     return, NumLockey(True)
 }
-NumLockOff(){                                                       
+NumLockOff(){
     return, NumLockey()
 }
 
