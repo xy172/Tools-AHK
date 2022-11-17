@@ -2,36 +2,24 @@ appMenu()
 {
     Menu, appMenu, Add
     Menu, appMenu, Delete
+        Menu, pasteMenu, Add
+        Menu, pasteMenu, Delete
+        Menu, pasteMenu, Add, Default, defaultPaste
+        Menu, pasteMenu, Add, Trim Leading 0, trim0Paste
+        Menu, pasteMenu, Add, Plainify, plainPaste
 
-    Menu, pasteMenu, Add
-    Menu, pasteMenu, Delete
-    Menu, pasteMenu, Add, Default, defaultPaste
-    Menu, pasteMenu, Add, Trim Leading 0, trim0Paste
-    Menu, pasteMenu, Add, Plainify, plainPaste
-    uncheckAll("pasteMenu")
-    Switch appType[1]
-    {
-    Case "Trim Leading 0":
-        Menu, pasteMenu, Check, Trim Leading 0
-    Case "Plainify":
-        Menu, pasteMenu, Check, Plainify
-    Case "Default":
-        Menu, pasteMenu, Check, Default
-    }
+        appMenu_uncheckAll("pasteMenu")
 
-    Menu, numpadMenu, Add
-    Menu, numpadMenu, Delete
-    Menu, numpadMenu, Add, Period, periodNum
-    Menu, numpadMenu, Add, Colon, colonNum
-    uncheckAll("numpadMenu")
-    Switch appType[2]
-    {
-    Case "Period":
-        Menu, numpadMenu, Check, Period
-    Case "Colon":
-        Menu, numpadMenu, Check, Colon
-    }
-
+        Switch appVar[1]
+        {
+        Case "Trim Leading 0":
+            Menu, pasteMenu, Check, Trim Leading 0
+        Case "Plainify":
+            Menu, pasteMenu, Check, Plainify
+        Case "Default":
+            Menu, pasteMenu, Check, Default
+        }
+        
     Menu, appMenu, Add, Paste Menu, :pasteMenu
     Menu, appMenu, Add, Numpad Period, :numpadMenu
     Menu, appMenu, Show
@@ -39,35 +27,23 @@ appMenu()
 
 defaultPaste()
 {
-    uncheckAll("pasteMenu")
-    appType[1] := "Default"
+    appMenu_uncheckAll("pasteMenu")
+    appVar[1] := "Default"
 }
 
 trim0Paste()
 {
-    uncheckAll("pasteMenu")
-    appType[1] := "Trim Leading 0"
+    appMenu_uncheckAll("pasteMenu")
+    appVar[1] := "Trim Leading 0"
 }
 
 plainPaste()
 {
-    uncheckAll("pasteMenu")
-    appType[1] := "Plainify"
+    appMenu_uncheckAll("pasteMenu")
+    appVar[1] := "Plainify"
 }
 
-periodNum()
-{
-    uncheckAll("numpadMenu")
-    appType[2] := "Period"
-}
-
-colonNum()
-{
-    uncheckAll("numpadMenu")
-    appType[2] := "Colon"
-}
-
-uncheckAll(menu)
+appMenu_uncheckAll(menu)
 {
     Switch menu
     {
@@ -83,7 +59,7 @@ uncheckAll(menu)
 
 appMenu_paste()
 {
-    Switch appType[1]
+    Switch appVar[1]
     {
     Case "Trim Leading 0":
         plainify_sender(plainify_trimLeading0(plainify(Clipboard)), True)
@@ -96,11 +72,25 @@ appMenu_paste()
 
 appMenu_numpadDot()
 {
-    Switch appType[2]
+    Switch appVar[2]
     {
     Case "Period":
-        Send, NumpadDot
+        Send, {NumpadDot}
     Case "Colon":
         Send, :
     }
+}
+
+appMenu_periodNum()
+{
+    appMenu_uncheckAll("numpadMenu")
+    appVar[2] := "Period"
+    Menu, numpadMenu, Check, Period
+}
+
+appMenu_colonNum()
+{
+    appMenu_uncheckAll("numpadMenu")
+    appVar[2] := "Colon"
+    Menu, numpadMenu, Check, Colon
 }
