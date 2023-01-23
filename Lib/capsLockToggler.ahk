@@ -1,39 +1,39 @@
-CapsLockMenu()
+﻿CapsLockMenu()
 {
     Menu, CapsLockMenu, Add ; Prevents next lines deleting from erroring upon initial run.
     Menu, CapsLockMenu, Delete ; Clears old menu to prevent duplicate lines
-    Menu, CapsLockMenu, Add, CapsLock ON, CapsLockMenu_CapsLockOn
-    Menu, CapsLockMenu, Add, CapsLock off, CapsLockMenu_CapsLockOff
+    Menu, CapsLockMenu, Add, CapsLock &ON, CapsLockMenu_CapsLockOn
+    Menu, CapsLockMenu, Add, CapsLock o&ff, CapsLockMenu_CapsLockOff
     Menu, CapsLockMenu, Add
-    Menu, CapsLockMenu, Add, Paste as Plain Text, CapsLockMenu_PastePlain
+    Menu, CapsLockMenu, Add, &Paste as Plain Text, CapsLockMenu_PastePlain
     Menu, CapsLockMenu, Add
         Menu, ConvertCaseMenu, Add
         Menu, ConvertCaseMenu, Delete
-        Menu, ConvertCaseMenu, Add, Title Case, CapsLockMenu_Title
-        Menu, ConvertCaseMenu, Add, Capital Case, CapsLockMenu_Capital
-        Menu, ConvertCaseMenu, Add, Sentence case, CapsLockMenu_Sentence
+        Menu, ConvertCaseMenu, Add, &Title Case, CapsLockMenu_Title
+        Menu, ConvertCaseMenu, Add, &Capital Case, CapsLockMenu_Capital
+        Menu, ConvertCaseMenu, Add, &Sentence case, CapsLockMenu_Sentence
         Menu, ConvertCaseMenu, Add
-        Menu, ConvertCaseMenu, Add, UPPERCASE, CapsLockMenu_Upper
-        Menu, ConvertCaseMenu, Add, lowercase, CapsLockMenu_Lower
-        Menu, ConvertCaseMenu, Add, camelCase, CapsLockMenu_camel
-        Menu, ConvertCaseMenu, Add, PascalCase, CapsLockMenu_Pascal
+        Menu, ConvertCaseMenu, Add, &UPPERCASE, CapsLockMenu_Upper
+        Menu, ConvertCaseMenu, Add, &lowercase, CapsLockMenu_Lower
+        Menu, ConvertCaseMenu, Add, ca&melCase, CapsLockMenu_camel
+        Menu, ConvertCaseMenu, Add, &PascalCase, CapsLockMenu_Pascal
         Menu, ConvertCaseMenu, Add
-        Menu, ConvertCaseMenu, Add, Dot.Case, CapsLockMenu_Dot
-        Menu, ConvertCaseMenu, Add, Snake_Case, CapsLockMenu_Snake
-        Menu, ConvertCaseMenu, Add, Kebab-Case, CapsLockMenu_Kebab
+        Menu, ConvertCaseMenu, Add, &Dot.Case, CapsLockMenu_Dot
+        Menu, ConvertCaseMenu, Add, S&nake_Case, CapsLockMenu_Snake
+        Menu, ConvertCaseMenu, Add, &Kebab-Case, CapsLockMenu_Kebab
         Menu, ConvertCaseMenu, Add
-        Menu, ConvertCaseMenu, Add, iNVERT cASE, CapsLockMenu_Invert
-        Menu, ConvertCaseMenu, Add, RaNdoM caSe, CapsLockMenu_Random
-        Menu, ConvertCaseMenu, Add, aLtErNaTiNg cAsE, CapsLockMenu_Alternating
-    Menu, CapsLockMenu, Add, Convert Case, :ConvertCaseMenu
+        Menu, ConvertCaseMenu, Add, &iNVERT cASE, CapsLockMenu_Invert
+        Menu, ConvertCaseMenu, Add, &RaNdoM caSe, CapsLockMenu_Random
+        Menu, ConvertCaseMenu, Add, &aLtErNaTiNg cAsE, CapsLockMenu_Alternating
+    Menu, CapsLockMenu, Add, &Convert Case, :ConvertCaseMenu
     Menu, CapsLockMenu, Add
-    Menu, CapsLockMenu, Add, Emoji Keyboard, CapsLockMenu_OpenEmojiKeyboard
+    Menu, CapsLockMenu, Add, &Emoji Keyboard, CapsLockMenu_OpenEmojiKeyboard
     Menu, CapsLockMenu, Add
         Menu, InsertLineMenu, Add
         Menu, InsertLineMenu, Delete
-        Menu, InsertLineMenu, Add, Light, CapsLockMenu_LightHorizontalBoxDrawing
-        Menu, InsertLineMenu, Add, Double, CapsLockMenu_DoubleHorizontalBoxDrawing
-    Menu, CapsLockMenu, Add, Insert Line, :InsertLineMenu
+        Menu, InsertLineMenu, Add, &Light, CapsLockMenu_LightHorizontalBoxDrawing
+        Menu, InsertLineMenu, Add, &Double, CapsLockMenu_DoubleHorizontalBoxDrawing
+    Menu, CapsLockMenu, Add, &Insert Line, :InsertLineMenu
     Menu, CapsLockMenu, Show
 }
 
@@ -65,13 +65,16 @@ CapsLockMenu_PastePlain()
 }
 
 ; creating something that links the function to a specific state that can then be called by legacy commands
-ToggleCapsLock(){
+ToggleCapsLock()
+{
     return, CapsLockey(, True)
 }
-CapsLockMenu_CapsLockOn(){
+CapsLockMenu_CapsLockOn()
+{
     return, CapsLockey(True)
 }
-CapsLockMenu_CapsLockOff(){
+CapsLockMenu_CapsLockOff()
+{
     return, CapsLockey()
 }
 

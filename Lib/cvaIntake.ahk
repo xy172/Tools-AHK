@@ -41,6 +41,10 @@ cvaIntake()
             movedItems += 1
         }
     }
+    outlook := ""
+    Intakemail := ""
+    completedFolder := ""
+    cvaSheet := ""
 }
 ChangeButtonNames: 
 IfWinNotExist, CVA Column

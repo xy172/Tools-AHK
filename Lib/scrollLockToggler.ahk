@@ -3,8 +3,8 @@ scrollLockMenu()
 {
     Menu, scrollLockMenu, Add
     Menu, scrollLockMenu, Delete
-    Menu, scrollLockMenu, Add, ScrollLock on, scrollLockOn
-    Menu, scrollLockMenu, Add, ScrollLock off, scrollLockOff
+    Menu, scrollLockMenu, Add, ScrollLock &on, scrollLockOn
+    Menu, scrollLockMenu, Add, ScrollLock o&ff, scrollLockOff
     Menu, scrollLockMenu, Show
 }
 
