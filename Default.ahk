@@ -10,12 +10,13 @@ DllCall("SetThreadDpiAwarenessContext", "ptr", -4, "ptr") ;Fixes mouse movement 
 global appVar := ["Default","Period"] ; Global Variable for keeping track of current menu selections.
 global winid := "" ;Global Variable for setting window transparency
 
-;Looping through all library files to catch any not loaded automatically, including my autoexecute and app specific hotkeys.
-Loop Files, %A_MyDocuments%\AutoHotkey\Lib\*.ahk
-{
-    #Include, %A_LoopFileFullPath%
-    #If ;Clears out any previously stated if directives for app specific hotkeys
-}
+;Sets include's starting directory (Different than SetWorkingDir)
+#Include, %A_MyDocuments%\AutoHotkey\Lib\
+;Auto Execute stuff, such as global menus
+#Include, autoExecute.ahk
+;All below are client specific hotkeys
+#Include, N9813.ahk
+#Include, Timecalc.ahk
 
 ;Start of global hotkeys
 #If ;Clears out any previously stated if directives for app specific hotkeys
