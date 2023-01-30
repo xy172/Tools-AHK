@@ -1,3 +1,4 @@
+;#Include, cvaIntake.ahk
 macroMenu()
 {
     Menu, macroMenu, Add
@@ -42,4 +43,9 @@ ruler()
     xresult := pos2x-pos1x
     yresult := pos2y-pos1y
     MsgBox,, Ruler, X = %xresult%`nY = %yresult%
+}
+
+cvaIntake()
+{
+    Run, %A_MyDocuments%\AutoHotkey\cvaIntake.ahk
 }

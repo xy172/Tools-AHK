@@ -1,3 +1,7 @@
+global appVar := ["Default","Period"] ; Global Variable for keeping track of current menu selections.
+global winid := "" ;Global Variable for setting window transparency
+
+
 Menu, numpadMenu, Add ; Prevents next lines deleting from erroring upon initial run.
 Menu, numpadMenu, Delete ; Clears old menu to prevent duplicate lines
 Menu, numpadMenu, Add, &Period, appMenu_periodNum

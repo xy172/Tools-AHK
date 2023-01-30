@@ -10,3 +10,5 @@ submitpunch(){
     Send +{enter}
     wb := ""
 }
+
+#If ; Closing above if directive
