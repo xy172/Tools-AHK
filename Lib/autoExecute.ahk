@@ -51,7 +51,6 @@ Return
 
 CpButtonOK: 
     Gui, Crop:Submit
-    WinSet, Region, % XEdit1 "-" YEdit1 " " XEdit2 "-" YEdit1 " " XEdit2 "-" YEdit2 " " XEdit1 "-" YEdit2 " " XEdit1 "-" YEdit1, ahk_pid %winid%
 Return
 
 CpButtonRestore:
