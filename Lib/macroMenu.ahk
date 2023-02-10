@@ -9,6 +9,7 @@ macroMenu()
     Menu, macroMenu, Add
     Menu, macroMenu, Add, &Pin/Unpin Window, pinWindow
     Menu, macroMenu, Add, Change &Opacity, windowOpacity
+    Menu, macroMenu, Add, Crop Window, windowCrop
     Menu, macroMenu, Add, &What Color, color
     Menu, macroMenu, Add, &Ruler, ruler
     Menu, macroMenu, Show
@@ -22,7 +23,18 @@ pinWindow()
 windowOpacity()
 {
     WinGet, winid, PID, A
-    Gui, Show, , Opacity Editor
+    Gui, Opacity:Show, , Opacity Editor
+}
+
+windowCrop()
+{
+    WinGet, winid, PID, A
+    WinGetPos, , , Width, Height, ahk_pid %winid%
+    GuiControl, Crop:+Range0-%Width%, XEdit2
+    GuiControl, Crop:, XEdit2, %Width%
+    GuiControl, Crop:+Range0-%Height%, YEdit2
+    GuiControl, Crop:, YEdit2, %Height%
+    Gui, Crop:Show, , WinCropper
 }
 
 color()

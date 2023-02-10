@@ -27,7 +27,7 @@ appMenu()
         Menu, miniMenu, Add, &CapsLock Menu, CapsLockMenu
         Menu, miniMenu, Add, &Number Lock Menu, NumLockMenu
         Menu, miniMenu, Add, &Scroll Lock Menu, scrollLockMenu
-        
+
     Menu, appMenu, Add, &Other Menus, :miniMenu
     ;Menu, appMenu, Add, Clipboard report, appMenu_Hex
     Menu, appMenu, Show
